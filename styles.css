@@ -1,0 +1,110 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  height: 600px;
+  width: 100%;
+  display: inline-block;
+  overflow: hidden;
+  /*align-items: center;*/
+}
+
+#gamePage {
+  height: 600px;
+  width: 100%;
+  display: inline-block;
+  background-color: black;
+}
+
+#ball {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  position: absolute;
+  left: 48.35%;
+}
+
+#circle {
+  height: 250px;
+  width: 250px;
+  position: absolute;
+  border-radius: 50%;
+  left: 41.75%;
+}
+
+#gameOver {
+  background-color: white;
+  height: 100px;
+  width: 400px;
+  position: absolute;
+  left: 37%;
+  visibility: hidden;
+  top: 40%;
+  text-align: center;
+  font: 80px bold;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+#coin {
+  background-color: bisque;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  position: absolute;
+  left: 49%;
+}
+
+#colorChange {
+  background-color: blueviolet;
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  left: 49%;
+}
+
+#scoreDisplay {
+  font: 80px bold;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  background-color: white;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/* colors containers */
+.redC {
+  background-color: red;
+}
+
+.yellowC {
+  background-color: yellow;
+}
+
+.greenC {
+  background-color: green;
+}
+
+.blueC {
+  background-color: blue;
+}
+
+.redcon {
+  border: 30px solid red;
+}
+
+.bluecon {
+  border: 30px solid blue;
+}
+
+.greencon {
+  border: 30px solid green;
+}
+.yellowcon {
+  border: 30px solid yellow;
+}
+
+.circle {
+  border-radius: 50%;
+}

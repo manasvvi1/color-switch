@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body onmousedown="Jump()">
+    <div id="home">
+      <header>
+        <h2><span style="color: #00ffff;">COLOR SWITCH</span></h2>
+        <ul>
+          <li onclick="Loading()">Play</li>
+          <li onclick="showInstructions()">Instructions</li>
+        </ul>
+      </header>
+      <main>
+        <button onclick="Loading()">PLAY</button>
+      </main>
+      <div id="HowToPlay">
+        <h1>How to Play</h1>
+        <p>1.The ball will bounce upwards on mouse click.</p>
+        <p>2.Hurdles will appear with color changing time to time.</p>
+        <p>
+          3.The ball can pass the hurdle only when the color of the ball and the
+          hurdle is same.
+        </p>
+        <p>
+          4.The player can collect circular coins present inside the hurdle.
+        </p>
+        <p>
+          5.The squares are colorchangers, which will allow the player to change
+          the color of the ball.
+        </p>
+      </div>
+    </div>
+    <div
+      id="gamePage"
+      style="
+        visibility: hidden;
+        height: 600px;
+        width: 100%;
+        display: inline-block;
+        background-color: black;
+      "
+    >
+      <!--game elements-->
+      <div id="coin"></div>
+      <div id="colorChange"></div>
+      <div id="ball" class=""></div>
+      <div id="circle" class=""></div>
+      <div id="scoreDisplay"></div>
+      <div id="gameOver">Game Over</div>
+    </div>
+    <script src="player.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>
