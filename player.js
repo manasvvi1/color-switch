@@ -26,7 +26,11 @@ function Loading() {
     displayGame.style.visibility = "visible";
     coin.style.visibility = "visible";
     colorChanger.style.visibility = "visible";
+    document.getElementById("HowToPlay").style.visibility = "hidden";
+
     document.getElementById("gameOver").style.visibility = "hidden";
+    displayScore.style.visibility="visible";
+    displayScore.innerHTML="Score : 0";
 
 
     colorChanger.style.top = "100px";
@@ -40,13 +44,12 @@ function Loading() {
     hurdle.classList.add(hurdlescolor[hurdleColorIndex]);
     //console.log("loaded" + window.positionY);
 
-
     Player.style.top = String(window.positionY).concat("px");
     // console.log(Player.style.top);
     hurdle.style.top = String(window.hurdlepositionY).concat("px");
-    coin.style.top = String(window.hurdlepositionY + 125).concat("px");
+    coin.style.top = String(window.hurdlepositionY + 125 - 15).concat("px");
     console.log(window.score);
-    
+
     displayScore.innerHTML = "Score : 0";
 }
 
@@ -72,18 +75,21 @@ function changecolor() {
 
 function update() {
     if (displayGame.style.visibility == "visible") {
-        window.positionY += 0.25;
-        if (window.positionY > 500) {
-            window.positionY = 500;
+        window.positionY += 0.4;
+        if (window.positionY > window.innerHeight) {
+            //window.positionY = 500;
+            document.getElementById("gameOver").style.visibility = "visible";
+            setTimeout(() => {displayGame.style.visibility = "hidden"; displayHome.style.visibility = "visible"; displayScore.style.visibility = "visible"; coin.style.visibility = "hidden"; colorChanger.style.visibility = "hidden";}, 1000);
+            setTimeout(() => {document.getElementById("gameOver").style.visibility = "hidden"; displayScore.style.visibility="hidden"}, 2000);
         }
-        else if (window.positionY < 2) {
+         if (window.positionY < 2) {
             window.positionY = 2;
         }
 
         Player.style.top = String(window.positionY).concat("px");
-        window.hurdlepositionY += 0.1;
+        window.hurdlepositionY += 0.2;
         hurdle.style.top = String(window.hurdlepositionY).concat("px");
-        coin.style.top = String(window.hurdlepositionY + 125).concat("px");
+        coin.style.top = String(window.hurdlepositionY + 125 - 15).concat("px");
 
         if (window.hurdlepositionY >= 750) {
             coin.style.visibility = "visible";
@@ -101,7 +107,7 @@ function update() {
         //     console.log("Score Updated to "+window.score);
         // }
 
-        if ((window.positionY == 100) && (window.isColorChanged == 0)) {
+        if ((window.positionY <= 100) && (window.isColorChanged == 0)) {
             colorChanger.style.visibility = "hidden";
             window.isColorChanged = 1;
             // colorChanger.style.top = "88119px";
@@ -111,8 +117,8 @@ function update() {
 }
 
 setInterval(function () {
-    update();
-}, 1);
+     update();
+ }, 1);
 
 setInterval(function () {
     hurdle.classList.remove(hurdlescolor[hurdleColorIndex]);
@@ -175,6 +181,7 @@ function Jump() {
             canJump();
             document.getElementById("gameOver").style.visibility = "visible";
             setTimeout(() => {displayGame.style.visibility = "hidden"; displayHome.style.visibility = "visible"; displayScore.style.visibility = "visible"; coin.style.visibility = "hidden"; colorChanger.style.visibility = "hidden";}, 1000);
+            setTimeout(() => {document.getElementById("gameOver").style.visibility = "hidden"; displayScore.style.visibility="hidden"}, 2000);
         }
     }
     else if ((positionY >= (hurdlepositionY) && (positionY - 40) < (hurdlepositionY + 23))) {
@@ -196,6 +203,7 @@ function Jump() {
             // displayHome.style.visibility = "visible";
             document.getElementById("gameOver").style.visibility = "visible";
             setTimeout(() => {displayGame.style.visibility = "hidden"; displayHome.style.visibility = "visible"; displayScore.style.visibility = "visible"; coin.style.visibility = "hidden"; colorChanger.style.visibility = "hidden";}, 1000);
+            setTimeout(() => {document.getElementById("gameOver").style.visibility = "hidden"; displayScore.style.visibility="hidden"}, 2000);
         }
     }
     else {

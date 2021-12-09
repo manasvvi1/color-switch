@@ -9,7 +9,7 @@
   background: url(color_switch.jfif);
   background-size: 100%;
   background-repeat: no-repeat;
-  background-position: bottom;
+  background-position: center;
 }
 header {
   height: 60px;
@@ -34,9 +34,7 @@ header ul li:hover {
   background: linear-gradient(#00ffff, #f4f4f4);
   color: #000;
 }
-header ul li:nth-child(1) {
-  border-top: 4px solid #33ffff;
-}
+
 main {
   height: calc(100vh - 60px);
   display: flex;
